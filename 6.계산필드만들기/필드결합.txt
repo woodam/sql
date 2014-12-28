@@ -15,3 +15,15 @@ ORDER BY vend_name;
 //말그대로 별칭이다 별명 임순옥을 임터라고 부르는거처럼 ㅋㅋㅋ
 
 
+SELECT	prod_id
+		,quantity
+		,item_price
+		,quantity *item_price AS EXPANDED_PRICE
+FROM	orderitems
+WHERE	order_num = 20008;
+
+//연산하는방법은 JS랑 비슷한듯
+//+ - * /
+
+
+
