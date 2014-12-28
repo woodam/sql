@@ -1,0 +1,17 @@
+SELECT	CONCAT(vend_name,'(',vend_city,')')
+FROM	vendors
+ORDER BY vend_name;
+
+//필드값 결합
+//MYSQL은 +나 ||로 문자 결합이안된다 대신 CONCAT이라는 함수가 있다 그럴로 결합한다
+//TRIM함수 공백제거할때 사용
+//RTRIM은 오른쪽공백 LTRIM은 왼쪽공백제거할때 사용 모두짜를때는 TRIM함수사용
+
+
+SELECT	CONCAT(vend_name,'(',vend_city,')') AS NAME     	
+FROM	vendors
+ORDER BY vend_name;
+//별칭을 붙이는이유 이렇게 칼럼이름이 두개로 더해졌을때 칼럼명이 난해해서 새로운 이름을 붙이고자할때 또는 곧나올 조인이나 긴문자열 줄일때 사용된다
+//말그대로 별칭이다 별명 임순옥을 임터라고 부르는거처럼 ㅋㅋㅋ
+
+

@@ -1,0 +1,41 @@
+SELECT prod_name, prod_price FROM products WHERE prod_price = 3.49;
+//이문을 실행하면 products테이블에서 모든 열이 아닌 두개의 열을 가지고온다 ( prod_name, prod_price) 여기서 조건은 prod_price 가 3.49인열인 데이터만 가지고온다
+
+WHERE 절 연산자
+=	같음
+<>	같지않음
+!=	같지않음
+<	보다작다
+<=	보다작거나같음
+!<	보다작지않음
+>	보다큼
+>=	보다크거나같음
+!>	보다크지않음
+BETWEEN	지정된 두 값사이에 있음
+IS NULL	null값임
+
+
+SELECT prod_name, prod_price FROM products WHERE prod_price < 10;
+//가격이 10이하인 제품 나열한다 
+
+
+SELECT vend_id, prod_name FROM products WHERE vend_id <> 'DLL01';
+//DLL01제조업체는 나열하지않는다
+
+SELECT vend_id, prod_name FROM products WHERE vend_id != 'DLL01';
+//DLL01제조업체는 나열하지않는다 위랑 같은 결과를 지원한다 하지만 DBMS에따라 연산자가 다를수가있다  !=를 지원안하지않는것도있다 확인후 사용하자
+
+
+SELECT prod_name, prod_price FROM products WHERE prod_price BETWEEN 5 AND 10;
+//가격이 5 ~~ 10 사이값 가지고온다    5와10도 포함이다.
+
+
+null  no value 즉 값이 없음을 의미 값이 0이거나 빈문자열 또는 공백인 경우와는 다름을 주의하자
+0, 빈문자열 공백도 분명한 값이며 null은 이러한 값조차 없는것을 말한다.
+
+SELECT prod_name FROM products WHERE prod_price IS NULL;
+값없는거 들고오겠다는말이다 결국 IS NULL
+NOT NULL은 NULL아닌걸 들고오겠다는말이다
+
+
+

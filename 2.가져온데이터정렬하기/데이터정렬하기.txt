@@ -1,0 +1,2 @@
+SELECT prod_name FROM products ORDER BY prod_name;
+//prod_name칼럼값 가지고 와서 알파벳순으로 정렬한다.

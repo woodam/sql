@@ -1,0 +1,13 @@
+SELECT prod_name FROM products;
+//칼럼이름 , 테이블명 칼럼값들 다 가지고옴
+
+SELECT prod_id, prod_name, prod_price FROM procucts;
+//여러개있을때도 똑같다
+
+SELECT * FROM products;
+//모든 칼럼값 다 가져오기
+
+
+
+
+

@@ -1,0 +1,18 @@
+SELECT prod_id, prod_price, prod_name FROM products WHERE vend_id = 'DLL01' AND prod_price <= 4;
+//제조사가DLL01 가격이 4 이하인것들만 검색한다 두조건은 AND로 연결한다
+
+SELECT prod_price, prod_name FROM products WHERE vend_id = 'DLL01' or vend_id = 'BRS01';
+//or 둘중에 하나만 포함되도 가지고온다 or == 또는
+ 
+ and와 or를 같이 쓰게 되면 and가 우선순위가 높다 그러다보니 내가 의도치 않은 데이터를 가지고올경우가생김
+ 해경방법
+ (조건 or 조건 )and 조건으로쓴다
+
+ SELECT prod_name, prod_price FROM products WHERE vend_id IN('DLL01', 'BRS01') ORDER BY prod_name;
+ //or와 같은것 or보다 빠르다
+
+SELECT prod_name FROM products WHERE NOT vend_id = 'DLL01' ORDER BY prod_name;
+//not <>이거와 같다 성능이 빠른것도 없다 mysql에서 지원되지않는다고하는데 확인이 필요하다
+EXISTS를 부정할때만 NOT EXISTS의 형식으로 사용된다고한다
+
+
