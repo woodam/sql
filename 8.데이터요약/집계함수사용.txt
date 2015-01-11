@@ -1,0 +1,35 @@
+//SQL 집계함수
+
+////////////////////////////////////////////////////////////////////////////////////////////
+AVG()	열(칼럼)의 평균값을 반환한다.
+COUNT()	열의 행 개수를 반환한다.
+MAX()	열의 최대값을 반환한다.
+MIN()	열의 최소값을 반환한다.
+SUM()	열값의 합계를 반환한다.
+///////////////////////////////////////////////////////////////////////////////////////////
+
+SELECT	AVG(prod_price) AS AVG_PRICE	
+FROM	products;
+//평균값 반환함 6.823333
+
+
+
+SELECT	COUNT(*) AS CNT 
+	, AVG(prod_price) AS AVG_PRICE	
+FROM	products
+WHERE	1=1 
+AND	vend_id = 'DLL01';
+//COUNT로 행(로우)의 갯수를 구해서 별칭CNT에 반환
+//AVG를 변균값반환 조건 vend_id = 'DLL01';
+
+SELECT	MAX(prod_price) AS MAX_PRICE
+FROM	products;
+//열에서 가장 큰수를 반환
+
+
+SELECT	SUM(quantity) AS ITEMS_ORDERED
+FROM	ORDERITEMS
+WHERE 	1=1
+AND	ORDER_NUM = 20005;
+//ORDER_NUM이 20005인것들 quantity값을 더해서 별칭에게 반환
+//값이 NULL인 열은  SUM함수에서 무시한다.
