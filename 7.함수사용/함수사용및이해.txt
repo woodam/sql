@@ -1,0 +1,43 @@
+SELECT 	VEND_NAME
+	, UPPER(VEND_NAME) AS VEND_NAME_UPCASE
+FROM 	VENDORS 
+ORDER BY VEND_NAME;
+
+UPPER함수 대문자로 변환
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+LEFT() (또는 부분 문자열 함수 사용)	문자열 왼쪽 끝에서 부터 지정된 길이 만큼 문자를 반환
+LENGTH() (또는 DATALENGTH()나 LEN())	문자열 길이를 반환
+LOWER() (Access에서 LCASE()사용)	문자열의 문자를 소문자로 변경
+LTRIM()					문자열 왼쪽 공백짤라냄
+RIGHT() (또는 부분 문자열 함수사용)	문자열 오른쪽 끝에서부터 지정된 길이만큼 문자를 반환
+RTRIM()					문자열 오른쪽 공백짤라냄
+SOUNDEX()				문자열 SOUNDEX 값을 반환
+UPPER() (Access에서 UCASE()사용)	문자열의 문자를 대문자로 변경
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+SELECT	cust_name
+	, cust_contact
+FROM	CUSTOMERS
+WHERE	SOUNDEX(cust_contact) = SOUNDEX('Michael Green');
+//SOUNDEX 비슷한 발음 Michelle Green값 가지고 옴 사실 그렇게 필요는 없을듯
+
+
+
+SELECT	order_num
+FROM	orders
+WHERE	YEAR(order_date) = 2004;
+//YEAR 2004년 데이터 들고옴 MYSQL
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+ABS() 숫자의 절대값을 반환한다
+COS() 지정한 각도의 코사인 값을 반환한다
+EXP() 지정한 숫자의 지수 값을 반환한다.
+PI()  파이값을 반환한다
+SIN() 지정한각도의 사인 값을 반환한다.
+SORT()지정한 숫자의 제곱근을 반환한다
+TAN() 지정한 각도의 탄젠트 값을 반환한다
+
