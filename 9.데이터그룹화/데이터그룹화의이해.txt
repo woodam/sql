@@ -1,0 +1,17 @@
+SELECT	VEND_ID, COUNT(*) AS NUM_PRODS
+FROM 	PRODUCTS
+GROUP BY VEND_ID;
+
+//ID에 같은 값을 그룹으로 묶어서 COUNT해준다.
+//GROUP BY는 통계를 내거나 그룹핑할때 쓰면될듯.
+
+
+
+SELECT	CUST_ID, COUNT(*) AS ORDERS
+FROM 	ORDERS
+GROUP BY CUST_ID
+HAVING COUNT(*) >=2;
+
+//HAVING은 WHERE 절의 모든연산자를 지원한다
+HAVING은 그룹핑한 값에다 필터링할때쓴다 WHERE은 그룹핑하기전 값을 필터링한다.
+
