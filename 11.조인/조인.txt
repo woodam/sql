@@ -1,0 +1,15 @@
+SELECT		PROD_NAME
+	      , VEND_NAME
+              , PROD_PRICE
+              , QUANTITY
+              , VENDORS.VEND_ID 
+FROM	        ORDERITEMS 
+	      , PRODUCTS
+              , vendors
+WHERE    	1 = 1
+AND		PRODUCTS.VEND_ID = VENDORS.VEND_ID
+AND		ORDERITEMS.PROD_ID = PRODUCTS.PROD_ID
+AND		ORDER_NUM = 20007;
+
+/*딱히 코멘트 남길거 없음
+*/

@@ -2,23 +2,23 @@ SELECT	CUST_ID
 FROM	ORDERS
 WHERE	1 = 1
 AND		ORDER_NUM IN ( 
-						SELECT	ORDER_NUM
-                        FROM	orderitems
-                        WHERE	1 = 1
-                        AND		PROD_ID = 'RGAN01'	
+				SELECT	ORDER_NUM
+	                        FROM	orderitems
+        	                WHERE	1 = 1
+                	        AND		PROD_ID = 'RGAN01'	
 
-					);
+				);
 
 //하위쿼리 사용 IN함수에 SELECT문을 이용에 다른 테이블을 조회할수있다
 
 
-SELECT	CUST_NAME
+SELECT		CUST_NAME
 		, CUST_STATE
-        , (SELECT	COUNT(*)
-        		FROM	ORDERS
-                    	WHERE	ORDERS.cust_id = CUSTOMERS.CUST_ID
-        )
-AS		ORDERS
+	        , (
+			SELECT		COUNT(*)
+			FROM		ORDERS
+			WHERE		ORDERS.cust_id = CUSTOMERS.CUST_ID
+	        ) AS	ORDERS
 		, cust_id
 FROM		customers
 ORDER BY	cust_id;
